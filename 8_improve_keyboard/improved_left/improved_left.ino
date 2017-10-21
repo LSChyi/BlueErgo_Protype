@@ -1,5 +1,5 @@
 #define BAUD_RATE 9600
-#define CYCLE 4
+#define CYCLE 2
 #include "KeyBtn.h"
 #include <SoftwareSerial.h>
 #include <QueueArray.h>
@@ -132,9 +132,11 @@ void loop() {
     }
     if (current_cycle == 0) {
         uint8_t queue_size = queue.count();
-        for (int i = 0; i < queue_size; ++i) {
-            send_buf[i] = queue.pop();
+        if(queue_size != 0) {
+            for (int i = 0; i < queue_size; ++i) {
+                send_buf[i] = queue.pop();
+            }
+            BT.write(send_buf, queue_size);
         }
-        BT.write(send_buf, queue_size);
     }
 }

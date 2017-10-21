@@ -183,11 +183,9 @@ void KeyboardMgr::exec() {
             if (keys[row][col].state_changed(key_state, now)) {
                 right_data.pressed = key_state;
                 right_data.matrix_idx = row + col * 14 + 7;
-                for (int i = 0; i < 100; ++i) {
-                    if (read_from_left()) {
-                        processKeyEvent(left_data);
-                        break;
-                    }
+                delay(30);
+                if (read_from_left()) {
+                    processKeyEvent(left_data);
                 }
                 processKeyEvent(right_data);
             }
