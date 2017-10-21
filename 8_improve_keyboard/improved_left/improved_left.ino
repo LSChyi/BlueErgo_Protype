@@ -1,5 +1,5 @@
 #define BAUD_RATE 9600
-#define CYCLE 1
+#define CYCLE 4
 #include "KeyBtn.h"
 #include <SoftwareSerial.h>
 #include <QueueArray.h>
