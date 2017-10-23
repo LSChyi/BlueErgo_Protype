@@ -5,7 +5,7 @@
 class KeyBtn {
 public:
     KeyBtn();
-    bool state_changed(bool read_state, unsigned long row_start);
+    bool state_changed(bool read_state);
 private:
     bool last_state;
     unsigned long last_act_time;

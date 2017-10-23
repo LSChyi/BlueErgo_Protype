@@ -27,10 +27,9 @@ void loop() {
         // select row
         digitalWrite(row_pins[row], LOW);
         
-        unsigned long now = millis();
         for (int8_t col = 0; col < 6; ++col) {
             bool key_state = digitalRead(col_pins[col]);
-            if (keys[row][col].state_changed(key_state, now)) {
+            if (keys[row][col].state_changed(key_state)) {
                 uint8_t matrix_idx = row + col * 14;
                 if (key_state == HIGH) {
                     matrix_idx |= 0b10000000;
