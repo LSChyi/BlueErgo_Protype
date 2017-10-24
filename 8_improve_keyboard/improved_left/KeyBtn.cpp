@@ -6,10 +6,11 @@ KeyBtn::KeyBtn() {
     last_state = HIGH; // treat every key is unpressed at boot
 }
 
-bool KeyBtn::state_changed(bool read_state, unsigned long row_start) {
+bool KeyBtn::state_changed(bool read_state) {
     if (read_state != last_state) {
-        if (row_start - last_act_time > BOUNCE_TIME) {
-            last_act_time = row_start;
+        unsigned long now = millis();
+        if (now - last_act_time > BOUNCE_TIME) {
+            last_act_time = now;
             last_state = read_state;
             return true;
         }
