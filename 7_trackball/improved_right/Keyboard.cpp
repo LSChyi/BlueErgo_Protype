@@ -310,6 +310,16 @@ void Keyboard_::releaseAll(void)
 	sendReport(&_keyReport);
 }
 
+void Keyboard_::releaseAllNormal() {
+	_keyReport.keys[0] = 0;
+	_keyReport.keys[1] = 0;	
+	_keyReport.keys[2] = 0;
+	_keyReport.keys[3] = 0;	
+	_keyReport.keys[4] = 0;
+	_keyReport.keys[5] = 0;	
+	sendReport(&_keyReport);
+}
+
 size_t Keyboard_::write(uint8_t c)
 {	
 	uint8_t p = press(c);  // Keydown

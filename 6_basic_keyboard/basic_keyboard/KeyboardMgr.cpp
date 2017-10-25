@@ -187,10 +187,7 @@ void KeyboardMgr::processKeyEvent(ParsedData data) {
         } else {
             uint8_t special_key = key_char;
             if (special_key == TOGGLE_LAYER_2) {
-                for (uint8_t i = 0; i < 6; ++i) {
-                    Keyboard._keyReport.keys[i] = 0;
-                }
-                Keyboard.sendReport(&(Keyboard._keyReport));
+                Keyboard.releaseAllNormal();
 
                 if (data.pressed) {
                     current_layer = layer2;

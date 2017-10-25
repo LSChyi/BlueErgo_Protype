@@ -89,6 +89,8 @@ public:
   size_t press(uint8_t k);
   size_t release(uint8_t k);
   void releaseAll(void);
+  void releaseAllNormal();
+private:
   KeyReport _keyReport;
   void sendReport(KeyReport* keys);
 };
