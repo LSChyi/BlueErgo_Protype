@@ -1,6 +1,6 @@
 #ifndef _KEY_BTN_H_
 #define _KEY_BTN_H_
-#define BOUNCE_TIME 1
+#define BOUNCE_TIME 2
 
 class KeyBtn {
 public:

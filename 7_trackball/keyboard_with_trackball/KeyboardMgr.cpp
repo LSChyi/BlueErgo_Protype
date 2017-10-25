@@ -161,7 +161,6 @@ void KeyboardMgr::begin() {
 void KeyboardMgr::exec() {
     for (uint8_t row = 0; row < 7; ++row) {
         control_row(row_codes[row]);
-        unsigned long now = millis();
 
         Wire.beginTransmission(mcp23018_addr);
         Wire.write(0x13);
@@ -170,7 +169,7 @@ void KeyboardMgr::exec() {
         byte col_data = Wire.read();
         for (uint8_t col = 0; col < 6; ++col) {
             bool key_state = col_decoder(col_data, col);
-            if (keys[row][col].state_changed(key_state, now)) {
+            if (keys[row][col].state_changed(key_state)) {
                 right_data.pressed = key_state;
                 right_data.matrix_idx = row + col * 14 + 7;
                 processKeyEvent(right_data);
