@@ -1,6 +1,6 @@
 #ifndef _KEYBOARD_MGR_H_
 #define _KEYBOARD_MGR_H_
-#define BAUD_RATE 38400
+#define BAUD_RATE 9600
 
 #include <SoftwareSerial.h>
 #include "KeyBtn.h"
