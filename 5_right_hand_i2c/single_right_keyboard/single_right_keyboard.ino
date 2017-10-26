@@ -107,8 +107,5 @@ void loop() {
                 Serial.println(matrix_idx);
             }
         }
-
-        // release row by setting all pins high
-        control_row(mcp23018, 0xFF);
     }
 }

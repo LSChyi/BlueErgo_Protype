@@ -167,8 +167,6 @@ void KeyboardMgr::exec() {
             }
         }
 
-        control_row(0xFF);
-
         while (read_from_left()) {
             processKeyEvent(left_data);
         }
