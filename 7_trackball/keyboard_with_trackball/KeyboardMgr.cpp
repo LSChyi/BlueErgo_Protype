@@ -187,12 +187,6 @@ void KeyboardMgr::processKeyEvent(ParsedData data) {
     char key_char = current_layer[data.matrix_idx];
     if (key_char != 0) {
         if ((uint8_t)key_char <= 218) {
-            if (key_char == KEY_RETURN) {
-                delay(5);
-                if (read_from_left()) {
-                    processKeyEvent(left_data);
-                }
-            }
             if (data.pressed) {
                 Keyboard.press(key_char);
             } else {
