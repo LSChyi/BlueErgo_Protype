@@ -1,6 +1,8 @@
-#define BAUD_RATE 57600
-#define BT Serial1
+#define BAUD_RATE 9600
+#include <SoftwareSerial.h>
 #include <Keyboard.h>
+
+SoftwareSerial BT(8, 7);
 
 void setup() {
     delay(200);
