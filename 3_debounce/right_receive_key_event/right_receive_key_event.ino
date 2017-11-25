@@ -13,8 +13,8 @@ void setup() {
 void loop() {
     if (BT.available()) {
         uint8_t recv = BT.read();
-        if (recv & 0b01000000) {
-            recv &= 0b10111111;
+        if (recv & 0b10000000) {
+            recv &= 0b01111111;
             switch (recv) {
                 case 10:
                     Keyboard.release('a');
